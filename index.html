@@ -37,6 +37,15 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* Float animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="font-sans text-slate-800 antialiased bg-brand-light selection:bg-brand-accent selection:text-white">
@@ -55,7 +64,6 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#services" class="text-slate-300 hover:text-brand-accent transition-colors text-sm font-medium">Services</a>
-                    <!-- <a href="#why-us" class="text-slate-300 hover:text-brand-accent transition-colors text-sm font-medium">Why Us</a> -->
                     <a href="#contact" class="text-slate-300 hover:text-brand-accent transition-colors text-sm font-medium">Contact</a>
                     <a href="#contact" class="bg-brand-accent hover:bg-brand-accentHover text-white px-5 py-2.5 rounded-md font-medium text-sm transition-all shadow-lg shadow-cyan-500/25">Get a Quote</a>
                 </div>
@@ -75,7 +83,6 @@
         <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-t border-slate-800">
             <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
                 <a href="#services" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-brand-accent hover:bg-slate-800 rounded-md">Services</a>
-                <a href="#why-us" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-brand-accent hover:bg-slate-800 rounded-md">Why Us</a>
                 <a href="#contact" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-brand-accent hover:bg-slate-800 rounded-md">Contact</a>
                 <a href="#contact" class="block w-full text-center mt-4 bg-brand-accent hover:bg-brand-accentHover text-white px-5 py-3 rounded-md font-medium transition-colors">Get a Quote</a>
             </div>
@@ -136,7 +143,6 @@
                     </p>
                 </div>
 
-                
                 <!-- Service 2 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:border-brand-accent/30 transition-all duration-300 group">
                     <div class="w-12 h-12 bg-cyan-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors duration-300">
@@ -150,7 +156,6 @@
                     </p>
                 </div>
 
-
                 <!-- Service 3 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:border-brand-accent/30 transition-all duration-300 group">
                     <div class="w-12 h-12 bg-cyan-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors duration-300">
@@ -163,83 +168,18 @@
                         Website design, setup, and optimization for yourself or your business.
                     </p>
                 </div>
-                <div class="mb-12 lg:mb-0 relative flex justify-center items-center p-8 bg-slate-50 rounded-3xl border border-slate-100 shadow-inner">
-                    <!-- Subtle background decoration -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 to-white rounded-3xl opacity-50"></div>
-                    <img src="CTS_logo_metallic_3D.png" alt="Cloudcroft Tech Alternate Logo" class="relative z-10 w-3/4 max-w-sm h-auto drop-shadow-2xl">
+            </div>
+            
+            <!-- Floating Metallic Logo Area -->
+            <div class="mt-20 flex justify-center items-center">
+                <div class="relative flex justify-center items-center p-8 bg-slate-50 rounded-3xl border border-slate-200 shadow-inner w-full max-w-2xl">
+                     <!-- Subtle background decoration -->
+                     <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 to-white rounded-3xl opacity-50"></div>
+                     <img src="CTS_logo_metallic_3D.png" alt="Cloudcroft Tech Floating Logo" class="relative z-10 w-1/2 max-w-sm h-auto drop-shadow-2xl animate-float">
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Why Choose Us Section
-    <section id="why-us" class="py-24 bg-white border-t border-slate-100 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-                
-                <!-- Graphic / Logo Area
-                
-                
-                <!-- Content Area
-                <div>
-                    <h2 class="text-base text-brand-accent font-semibold tracking-wide uppercase">The Cloudcroft Advantage</h2>
-                    <p class="mt-2 text-3xl leading-8 font-bold tracking-tight text-slate-900 sm:text-4xl mb-6">
-                        Why partner with us?
-                    </p>
-                    <p class="text-lg text-slate-600 mb-8">
-                        We don't just fix computers; we align technology with your business goals. Our proactive approach ensures that your IT infrastructure is a driver for success, not a bottleneck.
-                    </p>
-
-                    <div class="space-y-8">
-                        <!-- Benefit 1
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-accent text-white shadow-lg shadow-cyan-500/30">
-                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-xl font-bold text-slate-900">Proactive Monitoring</h4>
-                                <p class="mt-2 text-slate-600">We identify and resolve potential issues before they cause downtime. Our systems monitor your network 24/7/365.</p>
-                            </div>
-                        </div>
-
-                        <!-- Benefit 2
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-accent text-white shadow-lg shadow-cyan-500/30">
-                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-xl font-bold text-slate-900">Predictable Costs</h4>
-                                <p class="mt-2 text-slate-600">Say goodbye to unpredictable IT bills. Our flat-rate managed services model allows you to budget effectively without surprises.</p>
-                            </div>
-                        </div>
-
-                        <!-- Benefit 3
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-accent text-white shadow-lg shadow-cyan-500/30">
-                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-xl font-bold text-slate-900">Expert Team</h4>
-                                <p class="mt-2 text-slate-600">Gain access to an entire team of certified professionals and specialists for less than the cost of a single in-house hire.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    </section> 
 
     <!-- Contact Section -->
     <section id="contact" class="py-24 bg-slate-50">
@@ -258,16 +198,17 @@
                         </p>
                         
                         <div class="space-y-6">
-                            <div class="flex items-start">
+                            <!-- Headquarters (commented out) -->
+                            <!-- <div class="flex items-start">
                                 <svg class="w-6 h-6 text-brand-accent mt-1 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
-                                <!-- <div>
+                                <div>
                                     <h4 class="font-semibold text-lg">Headquarters</h4>
                                     <p class="text-slate-400 mt-1">123 Tech Summit Way<br>Cloudcroft, NM 88317</p>
-                                </div> -->
-                            </div>
+                                </div>
+                            </div> -->
                             
                             <div class="flex items-start">
                                 <svg class="w-6 h-6 text-brand-accent mt-1 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -285,7 +226,7 @@
                                 </svg>
                                 <div>
                                     <h4 class="font-semibold text-lg">Email</h4>
-                                    <p class="text-slate-400 mt-1"><a href="mailto:info@cloudcroft.tech">info@cloudcroft.tech</a></p>
+                                    <p class="text-slate-400 mt-1"><a href="mailto:info@cloudcroft.tech" class="hover:text-white transition-colors">info@cloudcroft.tech</a></p>
                                 </div>
                             </div>
                         </div>
